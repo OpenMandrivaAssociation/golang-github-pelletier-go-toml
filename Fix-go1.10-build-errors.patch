@@ -1,0 +1,26 @@
+From bb87f2dfb946aecbf8f31b9094c46c5184ae849b Mon Sep 17 00:00:00 2001
+From: Jan Chaloupka <jchaloup@redhat.com>
+Date: Sun, 18 Mar 2018 11:25:20 +0100
+Subject: [PATCH] Fix go1.10 build errors
+
+---
+ cmd/tomljson/main.go | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/cmd/tomljson/main.go b/cmd/tomljson/main.go
+index b2d6fc6..0611c55 100644
+--- a/cmd/tomljson/main.go
++++ b/cmd/tomljson/main.go
+@@ -22,8 +22,7 @@ Writing to STDIN and reading from STDOUT:
+   cat file.toml | tomljson > file.json
+ 
+ Reading from a file name:
+-  tomljson file.toml
+-`)
++  tomljson file.toml`)
+ 	}
+ 	flag.Parse()
+ 	os.Exit(processMain(flag.Args(), os.Stdin, os.Stdout, os.Stderr))
+-- 
+2.7.5
+
